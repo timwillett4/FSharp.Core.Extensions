@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Compile Include="Result.fs" />
+    <Compile Include="List.fs" />
   </ItemGroup>
 
 </Project>
