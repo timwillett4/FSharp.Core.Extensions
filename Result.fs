@@ -1,7 +1,6 @@
 ﻿// code taken from: https://github.com/swlaschin/13-ways-of-looking-at-a-turtle/blob/master/Common.fsx
 // with only slight modifications
 
-[<AutoOpen>]
 module FSharp.Core.Extensions.Result
 
 open System

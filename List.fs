@@ -1,8 +1,7 @@
-﻿// code taken from https://fsharpforfunandprofit.com/posts/elevated-world-4/#traverse 
-// with only slight modifications
+﻿module FSharp.Core.Extensions.List
 
-[<AutoOpen>]
-module FSharp.Core.Extensions.Lists
+// code for traverse functions taken taken from https://fsharpforfunandprofit.com/posts/elevated-world-4/#traverse 
+// with only slight modifications
 
 /// Map a Result producing function over a list to get a new Result 
 /// using applicative style
@@ -51,3 +50,7 @@ let rec traverseResultM f list =
         f head                 >>= (fun h -> 
         traverseResultM f tail >>= (fun t ->
         retn (cons h t) ))
+
+ // see https://stackoverflow.com/questions/9213761/cartesian-product-two-lists
+let product xs ys = 
+    xs |> List.collect (fun x -> ys |> List.map (fun y -> x, y))
