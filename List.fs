@@ -54,3 +54,9 @@ let rec traverseResultM f list =
  // see https://stackoverflow.com/questions/9213761/cartesian-product-two-lists
 let product xs ys = 
     xs |> List.collect (fun x -> ys |> List.map (fun y -> x, y))
+
+/// distinct returns a list containing elements in list1 that are not in list2
+let distinct list1 list2 =
+    list1 |> List.filter (fun x -> list2 |> List.contains x = false)
+        
+    
