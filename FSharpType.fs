@@ -2,7 +2,9 @@
 
 open Microsoft.FSharp.Reflection
 
-// This method currently only works for unions where all cases have no data
+/// <summary>
+/// <remarks>This method currently only works for unions where all cases have no data</remarks>
+/// </summary>
 let getAllUnionCases<'T>() =
     [for case in FSharpType.GetUnionCases(typeof<'T>) -> FSharpValue.MakeUnion(case, [||]) |> unbox<'T>]
 
